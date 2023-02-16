@@ -36,7 +36,7 @@ class Queue {
     {
         if(queue.size()==0)
             System.out.println("Queue is empty");
-        System.out.println("Removed value is:"+queue.remove(0));
+        System.out.println("Removed value is: "+queue.remove(0));
     }
     public static void push(int ele,ArrayList<Integer> queue)
     {
