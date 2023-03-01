@@ -1,0 +1,89 @@
+1) Create a database name "Employee".
+create database Employee;
+
+2) Create a table name - “Employee Details”.
+create table EmployeeDetails(
+	Emp_id number(10),
+	Emp_name varchar2(30),
+	Job_name varchar2(30),
+	Manager_id number(10),
+	Hire_date date,
+	Salary number(10),
+	Dep_id number(10)
+);
+
+3) Insert 10 details in the “Employee Details” table.
+insert into EmployeeDetails values(1,'Poojitha','Manager',123,'28-MAY-15',200000,12);
+insert into EmployeeDetails values(2,'Subrahmanyam','Developer',132,'18-APR-22',20000,10);
+insert into EmployeeDetails values(3,'Subhash','Developer',143,'02-APR-21',35000,11);
+insert into EmployeeDetails values(4,'Santhi','Developer',111,'29-NOV-20',60000,12);
+insert into EmployeeDetails values(5,'Mohith','Designer',101,'31-OCT-18',100000,15);
+insert into EmployeeDetails values(6,'Raj','Designer',108,'18-AUG-18',90000,15);
+insert into EmployeeDetails values(7,'Ajay','Designer',109,'05-MAY-21',80000,17);
+insert into EmployeeDetails values(8,'Manoj','Developer',150,'10-MAR-22',20000,18);
+insert into EmployeeDetails values(9,'Surya','Designer',118,'12-DEC-20',75000,17);
+insert into EmployeeDetails values(10,'Pradeep','Manager',128,'25-APR-15',250000,18);
+
+Query to display the table: select * from EmployeeDetails;
+
+Output:
+    EMP_ID EMP_NAME                       JOB_NAME                       MANAGER_ID HIRE_DATE     SALARY     DEP_ID
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------
+         1 Poojitha                       Manager                               123 28-MAY-15     200000         12
+         2 Subrahmanyam                   Developer                             132 18-APR-22      20000         10
+         3 Subhash                        Developer                             143 02-APR-21      35000         11
+         4 Santhi                         Developer                             111 29-NOV-20      60000         12
+         5 Mohith                         Designer                              101 31-OCT-18     100000         15
+         6 Raj                            Designer                              108 18-AUG-18      90000         15
+         7 Ajay                           Designer                              109 05-MAY-21      80000         17
+         8 Manoj                          Developer                             150 10-MAR-22      20000         18
+         9 Surya                          Designer                              118 12-DEC-20      75000         17
+        10 Pradeep                        Manager                               128 25-APR-15     250000         18
+
+4) Find the salaries of all the employees from the “Employee Details” table.
+Query: select Salary from EmployeeDetails;
+
+Output:
+    SALARY
+----------
+    200000
+     20000
+     35000
+     60000
+    100000
+     90000
+     80000
+     20000
+     75000
+    250000
+
+5) Find the unique designations of the employees from the table.	
+Query:select UNIQUE(Job_name) from EmployeeDetails;
+
+Output:
+JOB_NAME
+------------------------------
+Manager
+Designer
+Developer
+
+6) Change the salary where the emp_name is “Raj”.
+Query:
+update EmployeeDetails
+set Salary=125000
+where Emp_name='Raj';
+select * from EmployeeDetails;
+
+Output:
+    EMP_ID EMP_NAME                       JOB_NAME                       MANAGER_ID HIRE_DATE     SALARY     DEP_ID
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------
+         1 Poojitha                       Manager                               123 28-MAY-15     200000         12
+         2 Subrahmanyam                   Developer                             132 18-APR-22      20000         10
+         3 Subhash                        Developer                             143 02-APR-21      35000         11
+         4 Santhi                         Developer                             111 29-NOV-20      60000         12
+         5 Mohith                         Designer                              101 31-OCT-18     100000         15
+         6 Raj                            Designer                              108 18-AUG-18     125000         15
+         7 Ajay                           Designer                              109 05-MAY-21      80000         17
+         8 Manoj                          Developer                             150 10-MAR-22      20000         18
+         9 Surya                          Designer                              118 12-DEC-20      75000         17
+        10 Pradeep                        Manager                               128 25-APR-15     250000         18

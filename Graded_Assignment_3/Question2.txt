@@ -1,0 +1,83 @@
+1) Create a database name - “Football”.
+ create database Football;
+
+2) Create a table name - “Football Venue”.
+create table FootballVenue(
+	venue_id number(10),
+	venue_name varchar2(30),
+	city_id number(10),
+	capacity number(10)
+);
+
+3) Insert 10 details in the “Football Venue” table.
+
+insert into FootballVenue values(101,'Australia',1433,80000);
+insert into FootballVenue values(118,'Paris',2301,100000);
+insert into FootballVenue values(222,'California',1121,300000);
+insert into FootballVenue values(231,'Delhi',1191,50000);
+insert into FootballVenue values(122,'San Fransisco',9831,120000);
+insert into FootballVenue values(642,'Canada',8991,95000);
+insert into FootballVenue values(381,'Mexico',1191,200000);
+insert into FootballVenue values(501,'Croatia',1881,150000);
+insert into FootballVenue values(479,'Barcelona',2781,98000);
+insert into FootballVenue values(153,'Croatia',1881,80000);
+
+Query to display the table: select * from FootballVenue;
+
+Output:
+  VENUE_ID VENUE_NAME                        CITY_ID   CAPACITY
+---------- ------------------------------ ---------- ----------
+       101 Australia                            1433      80000
+       118 Paris                                2301     100000
+       222 California                           1121     300000
+       231 Delhi                                1191      50000
+       122 San Fransisco                        9831     120000
+       642 Canada                               8991      95000
+       381 Mexico                               1191     200000
+       501 Croatia                              1881     150000
+       479 Barcelona                            2781      98000
+       153 Croatia                              1881      80000
+
+4) Count the number of venues of the football world cup.
+Query:select COUNT(venue_id) from FootballVenue;
+
+Output:
+COUNT(VENUE_ID)
+---------------
+             10
+
+5) List all the venue names and capacities in the format of “Location” and “Volume”	
+Query:select venue_name as Location, capacity as Volume from FootballVenue;
+
+Output:
+LOCATION                           VOLUME
+------------------------------ ----------
+Australia                           80000
+Paris                              100000
+California                         300000
+Delhi                               50000
+San Fransisco                      120000
+Canada                              95000
+Mexico                             200000
+Croatia                            150000
+Barcelona                           98000
+Croatia                             80000
+
+6) Delete all the details where venue_name is equal to “Australia”.
+Query:
+delete from Footballvenue
+where venue_name='Australia';
+select * from FootballVenue;
+
+Output:
+  VENUE_ID VENUE_NAME                        CITY_ID   CAPACITY
+---------- ------------------------------ ---------- ----------
+       118 Paris                                2301     100000
+       222 California                           1121     300000
+       231 Delhi                                1191      50000
+       122 San Fransisco                        9831     120000
+       642 Canada                               8991      95000
+       381 Mexico                               1191     200000
+       501 Croatia                              1881     150000
+       479 Barcelona                            2781      98000
+       153 Croatia                              1881      80000
