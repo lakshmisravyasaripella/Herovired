@@ -1,0 +1,51 @@
+.head{
+    text-align: center;
+    color: red;
+}
+h1{
+    color: white;
+}
+body{
+    gap:60px;
+    width: 100%;
+}
+.body{
+    margin-left: 5%;
+    margin-top: 3%;
+    height: 500px;
+    width: 800px;
+}
+.quiz{
+    height: 300px;
+    width:700px;
+    position: relative;
+}
+.ques{
+    font-size: 28px;
+    font-weight: bold;
+}
+.option{
+    font-weight: bolder;
+}
+.submit{
+    margin-left: 350px;
+}
+button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+button:hover{
+    background: green;
+    color: white;
+}
+.ans label{
+    color: darkslategrey;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.body span{
+    font-size: 30px;
+    color: green;
+}
