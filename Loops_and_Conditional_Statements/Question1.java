@@ -1,5 +1,5 @@
 import java.util.*;
-class Mul_Table
+class Question1
 {
 	public static void main(String[] args) 
 	{
